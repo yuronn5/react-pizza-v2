@@ -1,0 +1,163 @@
+[
+  {
+    "id": 0,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "Бекон",
+    "types": [
+      0,
+      1
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 395,
+    "category": 0,
+    "rating": 10
+  },
+  {
+    "id": 1,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "Шинка",
+    "types": [
+      0
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 330,
+    "category": 1,
+    "rating": 7
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "З куркою",
+    "types": [
+      1
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 410,
+    "category": 5,
+    "rating": 10
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "Салямі",
+    "types": [
+      0,
+      1
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 230,
+    "category": 5,
+    "rating": 7
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "Європейська",
+    "types": [
+      0
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 450,
+    "category": 5,
+    "rating": 9
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "Американа",
+    "types": [
+      1
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 500,
+    "category": 5,
+    "rating": 9
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "Цезар",
+    "types": [
+      0
+    ],
+    "sizes": [
+      26,
+      30
+    ],
+    "price": 250,
+    "category": 5,
+    "rating": 6
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "Сицилійська",
+    "types": [
+      0,
+      1
+    ],
+    "sizes": [
+      30,
+      40
+    ],
+    "price": 400,
+    "category": 5,
+    "rating": 8
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "Чотири сезони",
+    "types": [
+      1
+    ],
+    "sizes": [
+      26,
+      40
+    ],
+    "price": 395,
+    "category": 5,
+    "rating": 10
+  },
+  {
+    "id": 9,
+    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+    "title": "Овочі і гриби",
+    "types": [
+      0,
+      1
+    ],
+    "sizes": [
+      26,
+      30,
+      40
+    ],
+    "price": 285,
+    "category": 5,
+    "rating": 7
+  }
+]
