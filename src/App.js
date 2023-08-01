@@ -4,10 +4,26 @@ import Categories from "./components/Categories";
 import Sort from "./components/Sort";
 import PizzaBlock from "./components/PizzaBlock";
 import './scss/app.scss';
+import React, {useEffect, useState} from "react";
 
 import pizzas from './assets/pizzas.json'
 
 function App() {
+    const [items, setItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        fetch("https://630b496bed18e8251650f470.mockapi.io/items")
+            .then((res) => {
+                return res.json();
+            })
+            .then((arr) => {
+                setItems(arr);
+                setIsLoading(false);
+            });
+    }, [])
+    // https://630b496bed18e8251650f470.mockapi.io/items
+
   return (
       <div className="wrapper">
         <Header />
