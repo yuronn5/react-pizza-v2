@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 function Categories({ value, onClickCategory }) {
     console.log(value)
-    const categories = ["Всі", "М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
+    const categories = ["Всі", "М'ясні", "Вегетаріанські", "Гриль", "Гострі"];
 
 
     //Old state from categories component

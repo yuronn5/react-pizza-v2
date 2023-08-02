@@ -14,7 +14,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch("https://630b496bed18e8251650f470.mockapi.io/items?category=" + categoryId)
+        fetch("https://64cabcd0700d50e3c7053f8d.mockapi.io/items?category=" + categoryId)
             .then((res) => {
                 return res.json();
             })
@@ -23,7 +23,7 @@ const Home = () => {
                 setIsLoading(false);
             });
         window.scrollTo(0, 0);
-    }, [])
+    }, [categoryId])
     // https://630b496bed18e8251650f470.mockapi.io/items
 
     return (
