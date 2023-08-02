@@ -14,6 +14,7 @@ const Home = () => {
 
 
     useEffect(() => {
+        setIsLoading(true);
         fetch("https://64cabcd0700d50e3c7053f8d.mockapi.io/items?category=" + categoryId)
             .then((res) => {
                 return res.json();
