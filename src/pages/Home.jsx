@@ -19,11 +19,12 @@ const Home = () => {
                 setItems(arr);
                 setIsLoading(false);
             });
+        window.scrollTo(0, 0);
     }, [])
     // https://630b496bed18e8251650f470.mockapi.io/items
 
     return (
-        <>
+        <div className="container">
             <div className="content__top">
                 <Categories />
                 <Sort />
@@ -41,7 +42,7 @@ const Home = () => {
                             types={pizza.types}/>)
                 }
             </div>
-        </>
+        </div>
     );
 }
 
