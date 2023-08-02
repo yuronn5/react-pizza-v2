@@ -9,9 +9,12 @@ import PizzaBlock from "../components/PizzaBlock";
 const Home = () => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [categoryId, setCategoryId] = useState(0);
+    const [sortType, setSortType] = useState(0);
+
 
     useEffect(() => {
-        fetch("https://630b496bed18e8251650f470.mockapi.io/items")
+        fetch("https://630b496bed18e8251650f470.mockapi.io/items?category=" + categoryId)
             .then((res) => {
                 return res.json();
             })
@@ -26,7 +29,7 @@ const Home = () => {
     return (
         <div className="container">
             <div className="content__top">
-                <Categories />
+                <Categories value={categoryId} onClickCategory={(id) => setCategoryId(id) } />
                 <Sort />
             </div>
             <h2 className="content__title">Все пиццы</h2>
