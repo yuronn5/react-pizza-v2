@@ -5,9 +5,10 @@ import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
+import {SearchContext} from "../App";
 
 
-const Home = ({ searchValue }) => {
+const Home = () => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [categoryId, setCategoryId] = useState(0);
@@ -16,6 +17,7 @@ const Home = ({ searchValue }) => {
         name: 'популярності',
         sortProperty: 'rating'
     });
+    const {searchValue} = React.useContext(SearchContext);
 
 
     useEffect(() => {
