@@ -4,12 +4,14 @@ import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
+import Pagination from "../components/Pagination";
 
 
 const Home = ({ searchValue }) => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [categoryId, setCategoryId] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
     const [sortType, setSortType] = useState({
         name: 'популярності',
         sortProperty: 'rating'
@@ -25,7 +27,7 @@ const Home = ({ searchValue }) => {
         const search = searchValue ? `&search=${searchValue}` : '';
 
         fetch(
-            `https://64cabcd0700d50e3c7053f8d.mockapi.io/items?${category}&sortBy=${sortBy}&order=${order}${search}`
+            `https://64cabcd0700d50e3c7053f8d.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`
         )
             .then((res) => {
                 return res.json();
@@ -35,7 +37,7 @@ const Home = ({ searchValue }) => {
                 setIsLoading(false);
             });
         window.scrollTo(0, 0);
-    }, [categoryId, sortType, searchValue])
+    }, [categoryId, sortType, searchValue, currentPage])
     // https://630b496bed18e8251650f470.mockapi.io/items
 
     const pizzas = items.map((obj) => <PizzaBlock key={obj.id} { ...obj } />);
@@ -54,6 +56,7 @@ const Home = ({ searchValue }) => {
                         pizzas
                 }
             </div>
+            <Pagination onChangePage={(number) => setCurrentPage(number)} />
         </div>
     );
 }
