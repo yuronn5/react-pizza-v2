@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-
+import axios from "axios";
 import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
@@ -36,16 +36,25 @@ const Home = () => {
         const category = categoryId > 0 ? `category=${categoryId}` : '';
         const search = searchValue ? `&search=${searchValue}` : '';
 
-        fetch(
+        // fetch(
+        //     `https://64cabcd0700d50e3c7053f8d.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`
+        // )
+        //     .then((res) => {
+        //         return res.json();
+        //     })
+        //     .then((arr) => {
+        //         setItems(arr);
+        //         setIsLoading(false);
+        //     });
+        axios.get(
             `https://64cabcd0700d50e3c7053f8d.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`
         )
-            .then((res) => {
-                return res.json();
-            })
-            .then((arr) => {
-                setItems(arr);
+            .then(response => {
+                console.log(response);
+                setItems(response.data);
                 setIsLoading(false);
             });
+
         window.scrollTo(0, 0);
     }, [categoryId, sortType, searchValue, currentPage])
     // https://630b496bed18e8251650f470.mockapi.io/items
