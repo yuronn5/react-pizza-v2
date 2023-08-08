@@ -3,6 +3,8 @@ import axios from "axios";
 import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
+import qs from 'qs';
+import { useNavigate } from 'react-router-dom';
 import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
 import {SearchContext} from "../App";
@@ -32,6 +34,7 @@ const Home = () => {
     const sortType = sort.sortProperty;
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         setIsLoading(true);
@@ -62,6 +65,18 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, [categoryId, sortType, searchValue, currentPage])
     // https://630b496bed18e8251650f470.mockapi.io/items
+
+
+    React.useEffect(() => {
+        const queryString = qs.stringify({
+            sortType: sort.sortProperty,
+            categoryId,
+            currentPage
+        })
+
+        console.log(queryString);
+        navigate(`?${queryString}`);
+    }, [categoryId, sortType, currentPage])
 
     const pizzas = items.map((obj) => <PizzaBlock key={obj.id} { ...obj } />);
     const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
