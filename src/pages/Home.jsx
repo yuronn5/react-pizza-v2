@@ -8,23 +8,27 @@ import Pagination from "../components/Pagination";
 import {SearchContext} from "../App";
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setCategoryId } from '../redux/slices/filterSlice'
+import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice'
 
 const Home = () => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [currentPage, setCurrentPage] = useState(1);
+    // const [currentPage, setCurrentPage] = useState(1);
     const {searchValue} = React.useContext(SearchContext);
 
     const onChangeCategory = (id) => {
         dispatch(setCategoryId(id))
     }
 
+    const onChangePage = (num) => {
+        dispatch(setCurrentPage(num))
+    }
+
     // const categoryId = useSelector((state) => state.filter.categoryId);
     // const sortType = useSelector((state) => state.filter.sort.sortProperty);
 
     // two in one
-    const { categoryId, sort } = useSelector((state) => state.filter);
+    const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
     const sortType = sort.sortProperty;
 
     const dispatch = useDispatch();
@@ -75,7 +79,7 @@ const Home = () => {
                         pizzas
                 }
             </div>
-            <Pagination onChangePage={(number) => setCurrentPage(number)} />
+            <Pagination currentPage={currentPage} onChangePage={onChangePage} />
         </div>
     );
 }
