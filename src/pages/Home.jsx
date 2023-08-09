@@ -4,7 +4,7 @@ import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import qs from 'qs';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
 import {SearchContext} from "../App";
@@ -78,7 +78,7 @@ const Home = () => {
         navigate(`?${queryString}`);
     }, [categoryId, sortType, currentPage])
 
-    const pizzas = items.map((obj) => <PizzaBlock key={obj.id} { ...obj } />);
+    const pizzas = items.map((obj) => <Link key={obj.id} to={`/pizza/${obj.id}`}><PizzaBlock  { ...obj } /></Link>);
     const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
 
     return (
